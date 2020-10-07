@@ -6,6 +6,7 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { MemberManagementComponent } from './member-management/member-management.component';
 import { PointsComponent } from './points/points.component';
 import { ContributionHistoryComponent } from './contribution-history/contribution-history.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { ContributionHistoryComponent } from './contribution-history/contributio
     LeaderboardComponent,
     MemberManagementComponent,
     PointsComponent,
-    ContributionHistoryComponent
+    ContributionHistoryComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule
