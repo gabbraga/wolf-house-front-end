@@ -8,6 +8,7 @@ import { PointsComponent } from './points/points.component';
 import { ContributionHistoryComponent } from './contribution-history/contribution-history.component';
 import { LoginComponent } from './login/login.component';
 import { AccountManagementComponent } from './account-management/account-management.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AccountManagementComponent } from './account-management/account-managem
     AccountManagementComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
