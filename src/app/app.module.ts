@@ -7,6 +7,7 @@ import { MemberManagementComponent } from './member-management/member-management
 import { PointsComponent } from './points/points.component';
 import { ContributionHistoryComponent } from './contribution-history/contribution-history.component';
 import { LoginComponent } from './login/login.component';
+import { AccountManagementComponent } from './account-management/account-management.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { LoginComponent } from './login/login.component';
     MemberManagementComponent,
     PointsComponent,
     ContributionHistoryComponent,
-    LoginComponent
+    LoginComponent,
+    AccountManagementComponent
   ],
   imports: [
     BrowserModule
