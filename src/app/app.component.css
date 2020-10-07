@@ -1,0 +1,24 @@
+.header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding: 1em;
+}
+
+.header a {
+    padding: 0.5em;
+    font-size: 0.9rem;
+}
+
+/* screens wider than 500px */
+@media screen and (min-width: 600px) {
+    .header {
+        justify-content: flex-end;
+    }
+
+    .header a {
+        padding: 1em;
+        font-size: 1rem;
+    }
+}
