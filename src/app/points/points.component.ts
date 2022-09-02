@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
+import { ReactiveFormsModule, FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
 
 
 @Component({
@@ -10,36 +10,48 @@ import {map, startWith} from 'rxjs/operators';
   styleUrls: ['./points.component.css']
 })
 export class PointsComponent implements OnInit {
-  memberControl = new FormControl('');
-  houseControl = new FormControl('');
-  filteredMembers: Observable<string[]>;
-  paws: string[];
-  members: string[];
-  selectedMember: any;
+  public filteredMembers: Observable<string[]>;
+  public paws: string[];
+  public members: string[];
+  public selectedMember: any;
+  public selectedHouseName: string;
+  public pointsForm: FormGroup;
 
-  constructor() {
-    this.houseControl.disable();
+  constructor(
+    private formBuilder: FormBuilder
+  ) {
     this.paws = [
-      "Reason1",
-      "Reason2",
-      "Reason3",
-      "Reason4",
-      "Reason5",
-      "Reason6"
+      "Perseverance",
+      "Honesty",
+      "Cooperation",
+      "Teamwork",
+      "Empathy",
+      "Self-Discipline",
+      "Responsibility",
+      "Flexibility",
+      "Kindness",
+      "Respect",
+      "Leadership",
+      "Participation"
     ];
     this.members = [
-      "student1",
-      "student2",
-      "student3",
-      "student4",
-      "student5",
-      "student6"
+      "Amy",
+      "Brock",
+      "Carlos",
+      "David",
+      "Emily",
+      "Fred"
     ];
   }
 
   ngOnInit(): void {
-    this.filteredMembers = this.memberControl.valueChanges.pipe(startWith(''),map(value => this._filter(value)));
-  }
+    this.pointsForm = this.formBuilder.group({
+      memberControl: [null, Validators.required],
+      houseControl: ['Arctic', Validators.required]
+    });
+/*     this.filteredMembers = this.pointsForm.controls.memberControl.valueChanges.pipe(startWith(''),map(value => this._filter(value)));
+ */  
+}
 
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();

@@ -10,6 +10,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 
 import { AppComponent } from './app.component';
@@ -40,7 +41,8 @@ import { AccountManagementComponent } from './account-management/account-managem
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatButtonModule
+    MatButtonModule,
+    NgSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,34 +1,18 @@
-<form>
-  <label for="">Member</label>
-  <mat-form-field appearance="outline" >
-    <input required type="text" matInput [matAutocomplete]="memberAutocomplete" [formControl]="memberControl"/>
-    <mat-autocomplete #memberAutocomplete="matAutocomplete">
-      <mat-option *ngFor="let member of filteredMembers | async" [value]="member">{{member}}</mat-option>
-    </mat-autocomplete> 
-  </mat-form-field>
+<form [formGroup]="pointsForm">
+  <label for="memberInput">Member</label>
+  <ng-select [items]="members"></ng-select>
    
-  <label for="">House</label>
-  <mat-form-field appearance="outline" id="houseInput">
-    <input matInput type="text" [formControl]="houseControl"/>  <!-- <span>{{houseName}}</span> -->
-  </mat-form-field>
-  
+  <label for="houseInput">House</label>
+  <input disabled id="houseInput" type="text" formControlName="houseControl"/> 
     
   <label for="points">Points</label>
-  <mat-form-field appearance="outline">
-    <input required matInput id="points" type="number" min="0" class="form-control">
-  </mat-form-field>
+  <input required matInput id="points" type="number" min="0" class="form-control">
     
   <label>Paw</label>
-  <mat-form-field appearance="outline">
-    <mat-select>
-      <mat-option *ngFor="let paw of paws" [value]="paw">{{paw}}</mat-option>
-    </mat-select>
-  </mat-form-field>
+  <ng-select [items]="paws"></ng-select>
 
   <label for="notes">Notes</label>
-  <mat-form-field appearance="outline">
-    <textarea matInput id="notes" class="form-control"></textarea>
-  </mat-form-field>
+  <textarea id="notes" class="form-control"></textarea>
   
   <label>Staff</label>
   <span>Tiffany</span> <!-- <span>{{teacherLoggedIn}}</span> -->
