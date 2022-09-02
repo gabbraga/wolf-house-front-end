@@ -1,1 +1,8 @@
-<p>login works!</p>
+<h1>Teacher Login</h1>
+<form [formGroup]="loginForm">
+    <label labelForId="usernameInput">Username</label>
+    <input id="usernameInput" type="text" formControlName="username">
+    <label labelForId="passwordInput">Password</label>
+    <input id="passwordInput" type="text" formControlName="password">
+    <button type="button">Login</button>
+</form>
