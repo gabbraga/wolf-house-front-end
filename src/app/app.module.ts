@@ -22,6 +22,7 @@ import { ContributionHistoryComponent } from './contribution-history/contributio
 import { LoginComponent } from './login/login.component';
 import { AccountManagementComponent } from './account-management/account-management.component';
 import { StudentContributionListComponent } from './student-contribution-list/student-contribution-list.component';
+import { TeacherMenuComponent } from './teacher-menu/teacher-menu.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { StudentContributionListComponent } from './student-contribution-list/st
     ContributionHistoryComponent,
     LoginComponent,
     AccountManagementComponent,
-    StudentContributionListComponent
+    StudentContributionListComponent,
+    TeacherMenuComponent
   ],
   imports: [
     BrowserModule,
