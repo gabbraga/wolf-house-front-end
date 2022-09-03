@@ -1,21 +1,47 @@
 <form [formGroup]="pointsForm">
-  <label for="memberInput">Member</label>
-  <ng-select [items]="members"></ng-select>
+  <label for="memberInput" class="form-label">Member</label>
+  <ng-select 
+    [items]="members"
+    placeholder="Select a member"
+    labelForId="memberInput">
+  </ng-select>
    
-  <label for="houseInput">House</label>
-  <input disabled id="houseInput" type="text" formControlName="houseControl"/> 
+  <label for="houseInput" class="form-label">House</label>
+  <input 
+    disabled 
+    id="houseInput" 
+    type="text" 
+    formControlName="houseControl"
+    class="form-control"/> 
     
-  <label for="points">Points</label>
-  <input required matInput id="points" type="number" min="0" class="form-control">
+  <label for="points" class="form-label">Points</label>
+  <input 
+    required 
+    id="points" 
+    type="number" 
+    min="0" 
+    class="form-control"
+    formControlName="points">
     
-  <label>Paw</label>
-  <ng-select [items]="paws"></ng-select>
+  <label for="paw" class="form-label">Paw</label>
+  <ng-select 
+    [items]="paws"
+    placeholder="Select a paw"
+    labelForId="paw"
+    formControlName="paw">
+  </ng-select>
 
-  <label for="notes">Notes</label>
-  <textarea id="notes" class="form-control"></textarea>
+  <label for="notes" class="form-label">Notes</label>
+  <textarea 
+    placeholder="Enter notes..."
+    id="notes" 
+    class="form-control"
+    rows="5"
+    formControlName="notes">
+  </textarea>
   
-  <label>Staff</label>
-  <span>Tiffany</span> <!-- <span>{{teacherLoggedIn}}</span> -->
+  <label for="staffMember" class="form-label">Staff</label>
+  <span>{{ loggedInTeacher }}</span>
   
-  <button type="submit" mat-raised-button color="primary">Add Points</button>
+  <button type="submit" class="btn btn-primary">Add Points</button>
 </form>
