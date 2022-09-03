@@ -1,0 +1,23 @@
+<div class="card mb-5">
+    <div class="card-body">
+        <h1>Student Contributions</h1>
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Points</th>
+                        <th>House</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let student of students">
+                        <td>{{ student.name }}</td>
+                        <td>{{ student.totalPoints }}</td>
+                        <td>{{ student.house }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
