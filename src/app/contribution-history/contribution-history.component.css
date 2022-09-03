@@ -3,18 +3,37 @@
     justify-content: start;
     align-items: center;
 }
-.student-info-header div {
+
+.wolf-house-symbol {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 1em;
+}
+
+.student-info-header+div {
     display: flex;
     flex-direction: column;
     margin: 1rem;
 }
 
-.student-info-header div span:first-child {
+.student-info-header-name,
+.student-info-header-points span:first-child {
    font-weight: bolder;
+   margin-right: 0.25rem;
 }
 
-.student-info-header div span:last-child {
-    display: flex;
-    flex-direction: column;
-    font-size: 0.7rem;
+.student-info-header-name {
+    font-size: 2rem;
 }
+
+.student-info-header-points span:first-child  {
+    font-size: 1.4rem;
+}
+
+.student-info-header-points span:last-child {
+    font-size: 0.9rem;
+}
+
+
