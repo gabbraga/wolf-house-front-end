@@ -11,7 +11,11 @@ import { MemberManagementComponent } from './member-management/member-management
 const routes: Routes = [
   { path: 'leaderboard', component: LeaderboardComponent },
   { path: 'teacher-login', component: LoginComponent },
-  { path: 'teacher-menu', component: TeacherMenuComponent },
+  { path: 'teacher-menu', component: TeacherMenuComponent, children: [
+    { path: 'add-points', component: PointsComponent },
+    { path: 'student-contributions', component: StudentContributionListComponent},
+    { path: 'member-management', component: MemberManagementComponent }
+  ]},
   { path: 'add-points', component: PointsComponent },
   { path: 'student-contributions', component: StudentContributionListComponent },
   { path: '',   redirectTo: '/leaderboard', pathMatch: 'full' },

@@ -7,21 +7,20 @@
         <span class="menu-title">Menu</span>
         <ul>
             <li>
-                <a routerLink="/add-points">Add Points</a>
+                <a routerLink="./add-points">Add Points</a>
             </li>
             <li>
-                <a routerLink="/student-contributions">Contribution History</a>
+                <a routerLink="./student-contributions">Contribution History</a>
             </li>
             <li>
-                <a routerLink="/member-management">Manage Members</a>
+                <a routerLink="./member-management">Manage Members</a>
             </li>
             <li>
-                <a routerLink="/#">Set Teacher Login</a>
+                <a routerLink="./">Set Teacher Login</a>
             </li>
         </ul>
     </div>
     <div class="action-area">
-        <span class="menu-title">Add Points</span>
-        <app-points></app-points>
+        <router-outlet></router-outlet>
     </div>
 </div>

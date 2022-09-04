@@ -16,6 +16,20 @@
 
 .teacher-menu-nav ul {
     list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.teacher-menu-nav li {
+    margin: 0.5rem;
+    padding: 0;
+}
+
+.teacher-menu-nav li a {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    color: black;
 }
 
 .action-area {
