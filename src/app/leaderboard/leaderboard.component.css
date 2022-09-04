@@ -4,7 +4,7 @@
     flex-wrap: wrap;
     justify-content: center;
     margin: 4em 0.25em 0;
-    border: 1px solid yellow;
+    /* border: 1px solid yellow; */
     align-items: center;
 }
 
@@ -43,41 +43,43 @@
 }
 
 /* for windows less than 900px wide*/
-@media screen and (max-width:1000px) {
+@media screen, (max-width:300px) {
     .wolf-houses-flex {
         flex-direction: column;
         flex-wrap: nowrap;
         margin: 0.25rem;
-        border: 1px solid green;
+        /* border: 1px solid green; */
         align-items: flex-start;
         max-width: 400px;
     }
     
     .wolf-house-flex {
-        flex-direction: row;
-        margin: 0.5rem;
-        justify-content: flex-start;
-        align-items: center;
+        display: grid;
+        grid-template-columns: 65px 120px auto;
+        grid-template-rows: auto auto auto;
+        margin: 0.5rem 0;
     }
 
     .wolf-house-name,
     .wolf-house-symbol,
     .wolf-house-points {
-        margin: 0.5rem;
+        margin: 0.25rem;
     }
     
     .wolf-house-name {
         font-size: 1.5rem;
-        text-align: center;
+        text-align: left;
     }
     
     .wolf-house-symbol {
-        width: 50px;
-        height: 50px;
+        min-width: 44px;
+        max-width: 44px;
+        height: 44px;
         order: -1;
     }
     
     .wolf-house-points {
         font-size: 1.5rem;
+        font-weight: bolder;
     }
 }

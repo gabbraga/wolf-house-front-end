@@ -1,47 +1,60 @@
-<form [formGroup]="pointsForm">
-  <label for="memberInput" class="form-label">Member</label>
-  <ng-select 
-    [items]="members"
-    placeholder="Select a member"
-    labelForId="memberInput">
-  </ng-select>
-   
-  <label for="houseInput" class="form-label">House</label>
-  <input 
-    disabled 
-    id="houseInput" 
-    type="text" 
-    formControlName="houseControl"
-    class="form-control"/> 
-    
-  <label for="points" class="form-label">Points</label>
-  <input 
-    required 
-    id="points" 
-    type="number" 
-    min="0" 
-    class="form-control"
-    formControlName="points">
-    
-  <label for="paw" class="form-label">Paw</label>
-  <ng-select 
-    [items]="paws"
-    placeholder="Select a paw"
-    labelForId="paw"
-    formControlName="paw">
-  </ng-select>
-
-  <label for="notes" class="form-label">Notes</label>
-  <textarea 
-    placeholder="Enter notes..."
-    id="notes" 
-    class="form-control"
-    rows="5"
-    formControlName="notes">
-  </textarea>
+<h1 style="font-size: 1.4rem">Add Points</h1>
+<form [formGroup]="pointsForm" class="points-form">
+  <div class="points-row-flex">
+    <label for="memberInput" class="points-form-label">Member</label>
+    <ng-select 
+      [items]="members"
+      placeholder="Select a member"
+      labelForId="memberInput">
+    </ng-select>
+  </div>
+ 
+  <div class="points-row-flex">
+    <label for="houseInput" class="points-form-label">House</label>
+    <input 
+      disabled 
+      id="houseInput" 
+      type="text" 
+      formControlName="house"
+      class="form-control points-form-input"/> 
+  </div>
   
-  <label for="staffMember" class="form-label">Staff</label>
-  <span>{{ loggedInTeacher }}</span>
+  <div class="points-row-flex">
+    <label for="paw" class="points-form-label">Paw</label>
+    <ng-select 
+      [items]="paws"
+      placeholder="Select a paw"
+      labelForId="paw"
+      formControlName="paw">
+    </ng-select>
+  </div>
+    
+  <div class="points-row-flex">
+    <label for="points" class="points-form-label">Points</label>
+    <input 
+      required 
+      id="points" 
+      type="number" 
+      min="0" 
+      class="form-control"
+      formControlName="points">
+  </div>
+
+  <div class="points-row-flex">
+    <label for="notes" class="points-form-label">Notes</label>
+    <textarea 
+      placeholder="Enter notes..."
+      id="notes" 
+      class="form-control m-0"
+      rows="5"
+      formControlName="notes">
+    </textarea>
+  </div>
+
+  <div class="points-row-flex">
+    <label for="staffMember" class="points-form-label w-100">Staff</label>
+    <span class="w-100 d-block">{{ loggedInTeacher }}</span>
+  </div>
   
   <button type="submit" class="btn btn-primary">Add Points</button>
 </form>

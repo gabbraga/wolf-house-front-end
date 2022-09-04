@@ -29,6 +29,36 @@ export class StudentContributionListComponent implements OnInit {
         name: 'Emily',
         totalPoints: 65,
         house: 'Arctic'
+      },
+      {
+        name: 'Brock',
+        totalPoints: 120,
+        house: 'Grey'
+      },
+      {
+        name: 'Amy',
+        totalPoints: 80,
+        house: 'Timber'
+      },
+      {
+        name: 'Emily',
+        totalPoints: 65,
+        house: 'Arctic'
+      },
+      {
+        name: 'Brock',
+        totalPoints: 120,
+        house: 'Grey'
+      },
+      {
+        name: 'Amy',
+        totalPoints: 80,
+        house: 'Timber'
+      },
+      {
+        name: 'Emily',
+        totalPoints: 65,
+        house: 'Arctic'
       }
     ]
    }
