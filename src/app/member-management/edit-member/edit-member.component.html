@@ -1,0 +1,45 @@
+<div class="card">
+    <h1 style="font-size: 1.4rem">Edit member</h1>
+    <form [formGroup]="editMemberForm" class="points-form">
+    <div class="points-row-flex">
+        <label for="firstName" class="points-form-label">First Name</label>
+        <input  
+        id="firstName" 
+        type="text" 
+        formControlName="firstName"
+        class="form-control points-form-input"/> 
+    </div>
+
+    <div class="points-row-flex">
+        <label for="lastInitial" class="points-form-label">Last Initial</label>
+        <input  
+        id="lastInitial" 
+        type="text" 
+        formControlName="lastInitial"
+        class="form-control points-form-input"/> 
+    </div>
+    
+    <div class="points-row-flex">
+        <label for="house" class="points-form-label">House</label>
+        <ng-select 
+        [items]="houseNames"
+        placeholder="Select a house"
+        labelForId="house"
+        formControlName="house">
+        </ng-select>
+    </div>
+    
+    <div class="member-radio-row-grid">
+        <div>
+            <label for="student">Student</label>
+            <input type="radio" id="student" formControlName="memberType" value="student" class="m-2">
+        </div>
+        <div>
+            <label for="staff">Staff</label>
+            <input type="radio" id="staff" formControlName="memberType" value="staff" class="m-2">
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Edit Member</button>
+    </form>
+</div>

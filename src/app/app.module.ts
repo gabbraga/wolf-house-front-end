@@ -16,26 +16,32 @@ import { NgSelectModule } from '@ng-select/ng-select';
 
 import { AppComponent } from './app.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
-import { MemberManagementComponent } from './member-management/member-management.component';
 import { PointsComponent } from './points/points.component';
 import { ContributionHistoryComponent } from './contribution-history/contribution-history.component';
 import { LoginComponent } from './login/login.component';
 import { AccountManagementComponent } from './account-management/account-management.component';
 import { StudentContributionListComponent } from './student-contribution-list/student-contribution-list.component';
 import { TeacherMenuComponent } from './teacher-menu/teacher-menu.component';
+import { AddMemberComponent } from './member-management/add-member/add-member.component';
+import { EditMemberComponent } from './member-management/edit-member/edit-member.component';
+import { RemoveMemberComponent } from './member-management/remove-member/remove-member.component';
+import { MemberManagementPortalComponent } from './member-management/member-management-portal/member-management-portal.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LeaderboardComponent,
-    MemberManagementComponent,
     PointsComponent,
     ContributionHistoryComponent,
     LoginComponent,
     AccountManagementComponent,
     StudentContributionListComponent,
-    TeacherMenuComponent
+    TeacherMenuComponent,
+    AddMemberComponent,
+    EditMemberComponent,
+    RemoveMemberComponent,
+    MemberManagementPortalComponent
   ],
   imports: [
     BrowserModule,
