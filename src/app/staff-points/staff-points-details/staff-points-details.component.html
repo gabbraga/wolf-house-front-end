@@ -1,0 +1,39 @@
+<div class="card m-3">
+    <div class="card-body">
+        <div class="student-info-header">
+            <img class="wolf-house-symbol" src="../../assets/images/timber-wolf.jpg">
+            <div>
+                <span class="student-info-header-name">{{ staffMember.name }}</span>
+                <div class="student-info-header-points">
+                    <span>{{ totalPoints }}</span><span>points</span>
+                </div>
+                <div class="student-info-header-points">
+                    <span>{{ totalSubmissions }}</span><span>submissions</span>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Points</th>
+                        <th>Paw</th>
+                        <th>Comments</th>
+                        <th>Staff Sign-Off</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let submission of pointsSubmissions">
+                        <td>{{ submission.date }} </td>
+                        <td>{{ submission.points }} </td>
+                        <td>{{ submission.paw }}</td>
+                        <td>{{ submission.comments }}</td>
+                        <td>{{ submission.staffSignOff }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

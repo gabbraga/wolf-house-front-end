@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-contribution-history',
-  templateUrl: './contribution-history.component.html',
-  styleUrls: ['./contribution-history.component.css']
+  selector: 'app-student-points-details',
+  templateUrl: './student-points-details.component.html',
+  styleUrls: ['./student-points-details.component.css']
 })
-export class ContributionHistoryComponent implements OnInit {
+export class StudentPointsDetailsComponent implements OnInit {
 
   public student: {
     name: string;
