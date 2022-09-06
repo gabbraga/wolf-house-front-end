@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { PointsComponent } from './points/points.component';
 import { LoginComponent } from './login/login.component';
-import { AccountManagementComponent } from './account-management/account-management.component';
 import { TeacherMenuComponent } from './teacher-menu/teacher-menu.component';
 import { AddMemberComponent } from './member-management/add-member/add-member.component';
 import { EditMemberComponent } from './member-management/edit-member/edit-member.component';
@@ -27,7 +26,6 @@ import { StaffPointsListComponent } from './staff-points/staff-points-list/staff
     LeaderboardComponent,
     PointsComponent,
     LoginComponent,
-    AccountManagementComponent,
     TeacherMenuComponent,
     AddMemberComponent,
     EditMemberComponent,
