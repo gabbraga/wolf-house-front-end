@@ -30,10 +30,15 @@ export class MemberManagementPortalComponent implements OnInit {
 
     this.addMemberForm.controls.selectedMember.valueChanges.subscribe((member: string) => {
       if(member != null) {
-        this.addMemberForm.addControl('firstName', new FormControl([{value: 'test first', disabled: true}, Validators.required]));
-        this.addMemberForm.addControl('lastInitial', new FormControl([{value: 'test last', disabled: true}, Validators.required]));
-        this.addMemberForm.addControl('house', new FormControl([{value: 'test house', disabled: true}, Validators.required]));
-        this.addMemberForm.addControl('memberType', new FormControl([{value: 'test student', disabled: true}, Validators.required]));
+        this.addMemberForm.addControl('firstName', new FormControl({value: member, disabled: true}, [Validators.required]));
+        this.addMemberForm.addControl('lastInitial', new FormControl({value: member, disabled: true}, [Validators.required]));
+        this.addMemberForm.addControl('house', new FormControl({value: 'Grey', disabled: true}, [Validators.required]));
+        this.addMemberForm.addControl('memberType', new FormControl({value: 'student', disabled: true}, [Validators.required]));
+      } else {
+        this.addMemberForm.removeControl('firstName');
+        this.addMemberForm.removeControl('lastInitial');
+        this.addMemberForm.removeControl('house');
+        this.addMemberForm.removeControl('memberType');
       }
     });
 

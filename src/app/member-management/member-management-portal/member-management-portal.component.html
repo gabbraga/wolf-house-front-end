@@ -15,59 +15,76 @@
         </div>
     </div>
     <div>
-        <form [formGroup]="addMemberForm" class="points-form">
-            <div class="points-row-flex">
-                <label for="memberDropdown" class="points-form-label">Member</label>
+        <form [formGroup]="addMemberForm" class="info-form">
+            <div class="info-input-flex">
+                <label for="memberDropdown" class="info-form-label">Member</label>
                 <ng-select 
-                [items]="members"
-                placeholder="Select a member"
-                labelForId="memberDropdown"
-                formControlName="selectedMember">
+                    [items]="members"
+                    placeholder="Select a member"
+                    labelForId="memberDropdown"
+                    formControlName="selectedMember"
+                    class="dropdown">
                 </ng-select>
             </div>
-
-            <div class="points-row-flex" *ngIf="addMemberForm.get('firstName')">
-                <label for="firstName" class="points-form-label">First Name</label>
-                <input
-                id="firstName" 
-                type="text" 
-                formControlName="firstName"
-                class="form-control points-form-input"/> 
+            <div class="info-row-flex">
+                <div class="info-input-flex" *ngIf="addMemberForm.get('firstName')">
+                    <label for="firstName" class="info-form-label">First Name</label>
+                    <input
+                    id="firstName" 
+                    type="text" 
+                    formControlName="firstName"
+                    class="form-control info-form-input"/> 
+                </div>
+            
+                <div class="info-input-flex" *ngIf="addMemberForm.get('lastInitial')">
+                    <label for="lastInitial" class="info-form-label">Last Initial</label>
+                    <input  
+                    id="lastInitial" 
+                    type="text" 
+                    formControlName="lastInitial"
+                    class="form-control info-form-input"/> 
+                </div>
+                
+                <div class="info-input-flex" *ngIf="addMemberForm.get('house')">
+                    <label for="house" class="info-form-label">House</label>
+                    <ng-select 
+                        [items]="houseNames"
+                        placeholder="Select a house"
+                        labelForId="house"
+                        formControlName="house"
+                        class="dropdown">
+                    </ng-select>
+                </div>
+                <div class="info-input-flex" *ngIf="addMemberForm.get('memberType')">            
+                    <div class="member-radio-row-grid" >
+                        <div>
+                            <label for="student">Student</label>
+                            <input type="radio" id="student" formControlName="memberType" value="student" class="m-2">
+                        </div>
+                        <div>
+                            <label for="staff">Staff</label>
+                            <input type="radio" id="staff" formControlName="memberType" value="staff" class="m-2">
+                        </div>
+                    </div>
+                </div>
             </div>
         
-            <div class="points-row-flex" *ngIf="addMemberForm.get('lastInitial')">
-                <label for="lastInitial" class="points-form-label">Last Initial</label>
-                <input  
-                id="lastInitial" 
-                type="text" 
-                formControlName="lastInitial"
-                class="form-control points-form-input"/> 
-            </div>
-            
-            <div class="points-row-flex" *ngIf="addMemberForm.get('house')">
-                <label for="house" class="points-form-label">House</label>
-                <ng-select 
-                [items]="houseNames"
-                placeholder="Select a house"
-                labelForId="house"
-                formControlName="house">
-                </ng-select>
-            </div>
-            
-            <div class="member-radio-row-grid" *ngIf="addMemberForm.get('memberType')">
-                <div>
-                    <label for="student">Student</label>
-                    <input type="radio" id="student" formControlName="memberType" value="student" class="m-2">
-                </div>
-                <div>
-                    <label for="staff">Staff</label>
-                    <input type="radio" id="staff" formControlName="memberType" value="staff" class="m-2">
-                </div>
-            </div>
-        
-            <button type="submit" class="btn btn-primary">Add Member</button>
-            <button type="submit" class="btn btn-primary edit-button" (click)="editMember">Edit Member</button>
-            <button type="submit" class="btn btn-danger remove-button">x</button>
+            <button 
+                type="submit"
+                class="btn btn-primary"
+                *ngIf="addMemberForm.get('selectedMember')?.value == null">
+                Add New Member</button>
+            <button 
+                type="submit" 
+                class="btn btn-primary edit-button" 
+                *ngIf="addMemberForm.get('selectedMember')?.value != null"
+                (click)="editMember">
+                Edit Member</button>
+            <button 
+                type="submit" 
+                class="btn btn-danger remove-button" 
+                *ngIf="addMemberForm.get('selectedMember')?.value != null">
+                Remove Member</button>
         </form>
     </div>
 </div>

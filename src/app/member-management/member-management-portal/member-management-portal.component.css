@@ -12,6 +12,10 @@
     margin: 1rem;
 }
 
+.house-member-count-flex div span:first-child {
+    font-size: 1.2rem;
+}
+
 .points-form {
     display: flex;
     flex-direction: column;
@@ -23,19 +27,26 @@
     max-width: max-content;
 }
 
-.points-row-flex {
-    display: grid;
-    grid-template-columns: 100px 400px;
-    grid-template-rows: auto;
-    margin: 0.5rem;
+.info-row-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem;
 }
 
-.points-form-label {
+.info-input-flex {
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+}
+
+.info-form-label {
     font-weight: bolder;
     margin: 0.25rem;
+    min-width: max-content;
 }
 
-.points-form-input:disabled {
+.info-form-input:disabled {
     background-color: white;
     border: none;
     color: black;
@@ -55,15 +66,20 @@
 }
 
 .add-button {
-    min-width: max-content;
-    padding: 0.5rem 1rem;
-    min-width: 140px;
     text-align: center;
-    align-self: end;
 }
 
 .edit-button {
-    width: max-content;
-    padding: 0.5rem 1rem;
     text-align: center;
+}
+
+.edit-button,
+.remove-button,
+.add-button {
+    min-width: max-content;
+    padding: 0.5rem 1rem;
+}
+
+.dropdown {
+    min-width: 200px;
 }
