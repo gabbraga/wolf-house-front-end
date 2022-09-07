@@ -1,3 +1,77 @@
-<app-add-member></app-add-member>
+<h1 style="font-size: 1.4rem">Manage Wolfhouse Members</h1>
+<div class="card">
+    <div class="house-member-count-flex">
+        <div>
+            <span>Arctic</span>
+            <span class="member-count">31 members</span>
+        </div>
+        <div>
+            <span>Grey</span>
+            <span class="member-count">28 members</span>
+        </div>
+        <div>
+            <span>Timber</span>
+            <span class="member-count">29 members</span>
+        </div>
+    </div>
+    <div>
+        <form [formGroup]="addMemberForm" class="points-form">
+            <div class="points-row-flex">
+                <label for="memberDropdown" class="points-form-label">Member</label>
+                <ng-select 
+                [items]="members"
+                placeholder="Select a member"
+                labelForId="memberDropdown"
+                formControlName="selectedMember">
+                </ng-select>
+            </div>
+
+            <div class="points-row-flex" *ngIf="addMemberForm.get('firstName')">
+                <label for="firstName" class="points-form-label">First Name</label>
+                <input
+                id="firstName" 
+                type="text" 
+                formControlName="firstName"
+                class="form-control points-form-input"/> 
+            </div>
+        
+            <div class="points-row-flex" *ngIf="addMemberForm.get('lastInitial')">
+                <label for="lastInitial" class="points-form-label">Last Initial</label>
+                <input  
+                id="lastInitial" 
+                type="text" 
+                formControlName="lastInitial"
+                class="form-control points-form-input"/> 
+            </div>
+            
+            <div class="points-row-flex" *ngIf="addMemberForm.get('house')">
+                <label for="house" class="points-form-label">House</label>
+                <ng-select 
+                [items]="houseNames"
+                placeholder="Select a house"
+                labelForId="house"
+                formControlName="house">
+                </ng-select>
+            </div>
+            
+            <div class="member-radio-row-grid" *ngIf="addMemberForm.get('memberType')">
+                <div>
+                    <label for="student">Student</label>
+                    <input type="radio" id="student" formControlName="memberType" value="student" class="m-2">
+                </div>
+                <div>
+                    <label for="staff">Staff</label>
+                    <input type="radio" id="staff" formControlName="memberType" value="staff" class="m-2">
+                </div>
+            </div>
+        
+            <button type="submit" class="btn btn-primary">Add Member</button>
+            <button type="submit" class="btn btn-primary edit-button" (click)="editMember">Edit Member</button>
+            <button type="submit" class="btn btn-danger remove-button">x</button>
+        </form>
+    </div>
+</div>
+
+<!-- <app-add-member></app-add-member>
 <app-edit-member></app-edit-member>
-<app-remove-member></app-remove-member>
+<app-remove-member></app-remove-member> -->

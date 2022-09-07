@@ -1,0 +1,69 @@
+.house-member-count-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.house-member-count-flex div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
+
+.points-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    /* border: 1px dashed red; */
+    padding: 0rem;
+    margin: 1rem 0 0 0;
+    max-width: max-content;
+}
+
+.points-row-flex {
+    display: grid;
+    grid-template-columns: 100px 400px;
+    grid-template-rows: auto;
+    margin: 0.5rem;
+}
+
+.points-form-label {
+    font-weight: bolder;
+    margin: 0.25rem;
+}
+
+.points-form-input:disabled {
+    background-color: white;
+    border: none;
+    color: black;
+}
+
+.member-radio-row-grid {
+    display: grid;
+    grid-template-columns: 100px 100px;
+    grid-template-rows: auto;
+    margin: 0.5rem;
+}
+
+.member-radio-row-grid div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.add-button {
+    min-width: max-content;
+    padding: 0.5rem 1rem;
+    min-width: 140px;
+    text-align: center;
+    align-self: end;
+}
+
+.edit-button {
+    width: max-content;
+    padding: 0.5rem 1rem;
+    text-align: center;
+}
