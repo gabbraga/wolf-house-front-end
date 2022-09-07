@@ -43,15 +43,15 @@ export class PointsComponent implements OnInit {
       "Emily",
       "Fred"
     ];
-    this.loggedInTeacher = 'Tiffany';
+    this.loggedInTeacher = '';
   }
 
   ngOnInit(): void {
     this.pointsForm = this.formBuilder.group({
       member: [null, Validators.required],
-      house: ['Arctic', Validators.required],
-      points: [5, Validators.required],
-      paw: ['Honesty', Validators.required],
+      house: ['', Validators.required],
+      points: [null, Validators.required],
+      paw: [null, Validators.required],
       notes: [null, Validators.required]
     });
 /*     this.filteredMembers = this.pointsForm.controls.memberControl.valueChanges.pipe(startWith(''),map(value => this._filter(value)));
