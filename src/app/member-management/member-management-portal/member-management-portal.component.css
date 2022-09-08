@@ -1,6 +1,14 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0.25rem;
+}
+
 .house-member-count-flex {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
@@ -9,54 +17,52 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 1rem;
+    margin: 1rem 3rem;
 }
 
 .house-member-count-flex div span:first-child {
     font-size: 1.2rem;
 }
 
-.points-form {
+.info-form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    /* border: 1px dashed red; */
-    padding: 0rem;
-    margin: 1rem 0 0 0;
-    max-width: max-content;
+    margin: 0.5rem;
 }
 
 .info-row-flex {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 1rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0.25rem;
 }
 
 .info-input-flex {
-    display: flex;
-    align-items: center;
-    margin: 1rem;
+    display: grid;
+    grid-template-columns: 100px 200px 1fr;
+    grid-template-rows: auto;
+    margin: auto 0.25rem;
 }
 
 .info-form-label {
     font-weight: bolder;
-    margin: 0.25rem;
+    margin: auto 0.25rem;
+    margin-right: 1rem;
     min-width: max-content;
 }
 
-.info-form-input:disabled {
-    background-color: white;
-    border: none;
-    color: black;
+.info-form-input {
+    margin: 0.25rem 0;
 }
 
 .member-radio-row-grid {
     display: grid;
     grid-template-columns: 100px 100px;
     grid-template-rows: auto;
-    margin: 0.5rem;
+    padding: 0.25rem;
 }
 
 .member-radio-row-grid div {
@@ -65,21 +71,23 @@
     align-items: flex-start;
 }
 
-.add-button {
-    text-align: center;
+.button-row-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.edit-button {
-    text-align: center;
+.remove-button {
+    background-color: #7a140e !important;
 }
 
+.add-button,
 .edit-button,
-.remove-button,
-.add-button {
-    min-width: max-content;
-    padding: 0.5rem 1rem;
+.remove-button {
+    margin: 0.5rem;
 }
 
 .dropdown {
     min-width: 200px;
+    margin: auto 0;
 }
