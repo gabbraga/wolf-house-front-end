@@ -1,0 +1,28 @@
+.header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding: 0.5rem;
+    position: fixed;
+    background-image: linear-gradient(to bottom, rgba(50, 45, 41, 0.6), rgba(50, 45, 41, 0));
+}
+
+.header a {
+    margin: 0.25rem;
+    font-size: 0.9rem;
+    text-decoration: none;
+    color:rgb(240, 227, 215);
+}
+
+/* screens wider than 500px */
+@media screen and (min-width: 600px) {
+    .header {
+        justify-content: flex-end;
+    }
+
+    .header a {
+        margin: 0.25rem;
+        font-size: 1rem;
+    }
+}

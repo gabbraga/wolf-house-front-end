@@ -8,4 +8,9 @@
 @import '~boostrap/scss/bootstrap.scss';
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } /* background-color: #e6ebf0 !important; */
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    color:rgb(240, 227, 215) !important;
+    background-color: rgba(50, 45, 41) !important;
+}

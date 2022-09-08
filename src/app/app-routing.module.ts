@@ -10,7 +10,7 @@ import { StaffPointsListComponent } from './staff-points/staff-points-list/staff
 import { StudentPointsListComponent } from './student-points/students-points-list/student-points-list.component';
 
 const routes: Routes = [
-  { path: 'leaderboard', component: LeaderboardComponent },
+  { path: 'leaderboard', component: LeaderboardComponent, data: {'tiny':false} },
   { path: 'teacher-login', component: LoginComponent },
   { path: 'teacher-menu', component: TeacherMenuComponent, children: [
     { path: 'add-points', component: PointsComponent },

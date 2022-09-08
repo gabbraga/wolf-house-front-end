@@ -1,17 +1,17 @@
-<div class="header">
-    <a routerLink="/teacher-login">Teacher Login</a>
-</div>
-<div class="wolf-houses-grid">
-    <div class="wolf-house-flex arctic">
-        <span class="wolf-house-name">Arctic</span>
-        <span class="wolf-house-points">145</span>
+<div ngClass="{{ tiny ? 'wolf-houses-flex-tiny' : 'wolf-houses-grid'}}">
+    <div ngClass="{{ tiny ? 'wolf-house-flex-tiny' : 'wolf-house-flex arctic'}}">
+        <img *ngIf="tiny" src="../../assets/images/arctic-wolf.jpg" class="wolf-house-symbol-tiny">
+        <span ngClass="{{ tiny ? 'wolf-house-name-tiny' : 'wolf-house-name'}}">Arctic</span>
+        <span ngClass="{{ tiny ? 'wolf-house-points-tiny' : 'wolf-house-points'}}">145</span>
     </div>
-    <div class="wolf-house-flex timber">
-        <span class="wolf-house-name">Timber</span>
-        <span class="wolf-house-points">234</span>
+    <div ngClass="{{ tiny ? 'wolf-house-flex-tiny' : 'wolf-house-flex timber'}}">
+        <img *ngIf="tiny" src="../../assets/images/timber-wolf.jpg" class="wolf-house-symbol-tiny">
+        <span ngClass="{{ tiny ? 'wolf-house-name-tiny' : 'wolf-house-name'}}">Timber</span>
+        <span ngClass="{{ tiny ? 'wolf-house-points-tiny' : 'wolf-house-points'}}">234</span>
     </div>
-    <div class="wolf-house-flex grey">
-        <span class="wolf-house-name">Grey</span>
-        <span class="wolf-house-points">542</span>
+    <div  ngClass="{{ tiny ? 'wolf-house-flex-tiny' : 'wolf-house-flex grey'}}">
+        <img *ngIf="tiny" src="../../assets/images/grey-wolf.jpg" class="wolf-house-symbol-tiny">
+        <span ngClass="{{ tiny ? 'wolf-house-name-tiny' : 'wolf-house-name'}}">Grey</span>
+        <span ngClass="{{ tiny ? 'wolf-house-points-tiny' : 'wolf-house-points'}}">542</span>
     </div>
 </div>

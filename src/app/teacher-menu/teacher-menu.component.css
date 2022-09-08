@@ -1,8 +1,8 @@
 .teacher-menu-grid {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: auto auto;
-    margin: 0 auto;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 30vh 70vh;
+    padding: 4rem 5rem;
 }
 
 .teacher-menu-grid .leaderbaord {
@@ -30,7 +30,7 @@
     text-decoration: none;
     margin: 0;
     padding: 0;
-    color: black;
+    color: inherit;
 }
 
 .action-area {

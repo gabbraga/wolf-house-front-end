@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-leaderboard',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LeaderboardComponent implements OnInit {
 
-  constructor() { }
+  @Input() tiny: boolean = false;
 
-  ngOnInit(): void {
+  constructor(
+    private activatedRoute: ActivatedRoute
+  ) { }
+
+  ngOnInit() {
+    this.activatedRoute.data.subscribe(data => {
+      if(data?.tiny) {
+        this.tiny=data.tiny;
+      }
+    });
   }
 
 }

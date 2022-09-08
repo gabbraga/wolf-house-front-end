@@ -1,9 +1,17 @@
 <h1>Teacher Login</h1>
 <form [formGroup]="loginForm">
-    <label labelForId="usernameInput">Username</label>
-    <input id="usernameInput" type="text" formControlName="username">
-    <label labelForId="passwordInput">Password</label>
-    <input id="passwordInput" type="text" formControlName="password">
-    <button type="button">Login</button>
-    <a routerLink="/teacher-menu">menu</a>
+    <label for="usernameInput">Username</label>
+    <input
+        id="usernameInput"
+        type="text" 
+        formControlName="username">
+    <label for="passwordInput">Password</label>
+    <input 
+        id="passwordInput"
+        type="text" 
+        formControlName="password">
+   <!--  <button 
+        type="button"
+        class="btn btn-primary">Login</button> -->
+    <a routerLink="/teacher-menu" class="btn btn-primary login-button">Login</a>
 </form>
