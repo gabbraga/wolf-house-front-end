@@ -5,7 +5,8 @@
     <ng-select 
       [items]="members"
       placeholder="Select a member"
-      labelForId="memberInput">
+      labelForId="memberInput"
+      formControlName="member">
     </ng-select>
   </div>
  
@@ -15,8 +16,7 @@
       disabled 
       id="houseInput" 
       type="text" 
-      formControlName="house"
-      class="form-control points-form-input"/> 
+      formControlName="house"/> 
   </div>
   
   <div class="points-row-flex">
@@ -37,7 +37,6 @@
       type="number" 
       min="0" 
       placeholder="Enter a number"
-      class="form-control"
       formControlName="points">
   </div>
 
@@ -46,7 +45,7 @@
     <textarea 
       placeholder="Enter notes..."
       id="notes" 
-      class="form-control m-0"
+      class="m-0"
       rows="5"
       formControlName="notes">
     </textarea>
@@ -54,8 +53,12 @@
 
   <div class="points-row-flex">
     <label for="staffMember" class="points-form-label w-100">Staff</label>
-    <span class="w-100 d-block">{{ loggedInTeacher }}</span>
+    <input 
+      disabled 
+      id="staffMember" 
+      type="text" 
+      formControlName="teacher"/> 
   </div>
   
-  <button type="submit" class="btn btn-primary">Add Points</button>
+  <button type="submit" class="btn primary-button">Add Points</button>
 </form>

@@ -16,7 +16,6 @@ export class PointsComponent implements OnInit {
   public selectedMember: any;
   public selectedHouseName: string;
   public pointsForm: FormGroup;
-  public loggedInTeacher: string;
 
   constructor(
     private formBuilder: FormBuilder
@@ -43,7 +42,6 @@ export class PointsComponent implements OnInit {
       "Emily",
       "Fred"
     ];
-    this.loggedInTeacher = '';
   }
 
   ngOnInit(): void {
@@ -52,7 +50,19 @@ export class PointsComponent implements OnInit {
       house: ['', Validators.required],
       points: [null, Validators.required],
       paw: [null, Validators.required],
-      notes: [null, Validators.required]
+      notes: ['', Validators.required],
+      teacher: ['Tiffany', Validators.required]
+    });
+
+    this.pointsForm.controls.member.valueChanges.subscribe((member: string) => {
+      if(member != null) {
+        this.pointsForm.controls.house.setValue('Timber');
+      } else {
+        this.pointsForm.controls.house.setValue('');
+        this.pointsForm.controls.points.setValue(null);
+        this.pointsForm.controls.paw.setValue(null);
+        this.pointsForm.controls.notes.setValue('');
+      }
     });
 /*     this.filteredMembers = this.pointsForm.controls.memberControl.valueChanges.pipe(startWith(''),map(value => this._filter(value)));
  */  

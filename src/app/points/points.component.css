@@ -3,7 +3,6 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    /* border: 1px dashed red; */
     padding: 0rem;
     margin: 1rem 0 0 0;
     max-width: max-content;
@@ -13,18 +12,12 @@
     display: grid;
     grid-template-columns: 100px 400px;
     grid-template-rows: auto;
-    margin: 0.5rem;
+    margin: 0.75rem 0;
 }
 
 .points-form-label {
     font-weight: bolder;
     margin: 0.25rem;
-}
-
-.points-form-input:disabled {
-    background-color: white;
-    border: none;
-    color: black;
 }
 
 form button {

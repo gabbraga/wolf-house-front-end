@@ -11,14 +11,14 @@
 h1 {
     font-size: 2rem;
     font-weight: lighter;
-    margin: 1.5rem 1rem 0.5rem;
+    margin: 1.5rem 1rem 1rem;
 }
 
 form {
     display: grid;
-    grid-template-columns: auto 300px;
+    grid-template-columns: auto 260px;
     grid-template-rows: auto;
-    grid-gap: 1rem;
+    grid-gap: 1.3rem;
     padding: 0;
     margin: 1.5rem;
 }
@@ -28,16 +28,14 @@ form label {
     text-align: right;
 }
 
-form input {
-    padding: 0.25rem;
-}
-
 .login-button {
     min-width: max-content;
     padding: 0.4rem 1.2rem;
     text-align: center;
     grid-column-end: -1;
     justify-self: end;
+    background-color: rgb(249 128 47);
+    border-style: none;
 }
 
 #notes {
