@@ -12,11 +12,12 @@ import { StudentPointsListComponent } from './student-points/students-points-lis
 const routes: Routes = [
   { path: 'leaderboard', component: LeaderboardComponent, data: {'tiny':false} },
   { path: 'teacher-login', component: LoginComponent },
-  { path: 'teacher-menu', component: TeacherMenuComponent, children: [
+  { path: 'teacher-menu', component: TeacherMenuComponent, data: {'actionAreaTitle':'Add Points'}, children: [
     { path: 'add-points', component: PointsComponent },
-    { path: 'student-points-list', component: StudentPointsListComponent},
+    { path: 'student-points-list', component: StudentPointsListComponent },
     { path: 'staff-points-list', component: StaffPointsListComponent},
-    { path: 'member-management', component: MemberManagementPortalComponent }
+    { path: 'member-management', component: MemberManagementPortalComponent },
+    { path: '',  redirectTo: '/teacher-menu/add-points', pathMatch: 'full' }
   ]},
   { path: '',   redirectTo: '/leaderboard', pathMatch: 'full' },
   /* { path: '**', component: PageNotFoundComponent } */

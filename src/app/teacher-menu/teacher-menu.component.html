@@ -1,29 +1,36 @@
 <div class="teacher-menu-grid">
-    <div class="leaderboard">
-        <span class="menu-title">Leaderboard</span>
-        <app-leaderboard [tiny]="true"></app-leaderboard>
+    <div class="teacher-menu-grid-section leaderboard">
+        <span class="teacher-menu-grid-section-title">Leaderboard</span>
+        <app-leaderboard [tiny]="true" class="teacher-menu-grid-section-content"></app-leaderboard>
     </div>
-    <div class="teacher-menu-nav">
-        <span class="menu-title">Menu</span>
-        <ul>
+    <div class="teacher-menu-grid-section teacher-menu-nav">
+        <span class="teacher-menu-grid-section-title">Menu</span>
+        <ul class="teacher-menu-grid-section-content">
             <li>
-                <a routerLink="./add-points">Add Points</a>
+                <a routerLink="./add-points" 
+                [state]="{ actionAreaTitle: 'Add Points'}">Add Points</a>
             </li>
             <li>
-                <a routerLink="./student-points-list">Student Point History</a>
+                <a routerLink="./student-points-list" 
+                [state]="{ actionAreaTitle: 'Student Point History'}">Student Point History</a>
             </li>
             <li>
-                <a routerLink="./staff-points-list">Staff Point History</a>
+                <a routerLink="./staff-points-list" 
+                [state]="{ actionAreaTitle: 'Staff Point History'}">Staff Point History</a>
             </li>
             <li>
-                <a routerLink="./member-management">Manage Members</a>
+                <a routerLink="./member-management" 
+                [state]="{ actionAreaTitle: 'Manage Members'}">Manage Members</a>
             </li>
             <li>
                 <a routerLink="./">Set Teacher Login</a>
             </li>
         </ul>
     </div>
-    <div class="action-area">
-        <router-outlet></router-outlet>
+    <div class="teacher-menu-grid-section action-area">
+        <span class="teacher-menu-grid-section-title">{{ actionAreaTitle }}</span>
+        <div class="teacher-menu-grid-section-content">
+            <router-outlet></router-outlet>
+        </div>
     </div>
 </div>

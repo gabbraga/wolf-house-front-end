@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router, NavigationEnd   } from '@angular/router';
 
 @Component({
   selector: 'app-teacher-menu',
@@ -7,9 +8,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeacherMenuComponent implements OnInit {
 
-  constructor() { }
+  public actionAreaTitle: string;
+
+  constructor(
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) { 
+    
+  }
 
   ngOnInit(): void {
+    this.activatedRoute.data.subscribe(data => {
+      if(data?.actionAreaTitle) {
+        this.actionAreaTitle = data.actionAreaTitle;
+      } else {
+        this.actionAreaTitle = '';
+      }
+      console.log(this.actionAreaTitle);
+    });
+
+    this.router.events.subscribe((event) => {
+      if(event instanceof NavigationEnd) {
+        /* console.log(history.state.actionAreaTitle); */
+        this.actionAreaTitle = history.state.actionAreaTitle || '';
+      }
+     });
   }
 
 }

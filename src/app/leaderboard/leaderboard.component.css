@@ -65,18 +65,20 @@
 /* styles for tiny leaderboard */
 
 .wolf-houses-flex-tiny {
+    display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
-    margin: 0.25rem;
     align-items: flex-start;
-    width: 100%
+    justify-content: flex-start;
+    padding: 0.5rem;
 }
     
 .wolf-house-flex-tiny {
     display: grid;
-    grid-template-columns: 65px 120px auto;
+    grid-template-columns: 65px 120px 1fr;
     grid-template-rows: auto auto auto;
-    margin: 0.5rem 0;
+    margin: 0.25rem 0;
+    width: 100%;
+    padding-right: 1rem;
 }
 
 .wolf-house-name-tiny,
@@ -100,4 +102,5 @@
 .wolf-house-points-tiny {
     font-size: 1.2rem;
     font-weight: bolder;
+    text-align: right;
 }
