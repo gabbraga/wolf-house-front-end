@@ -1,56 +1,146 @@
-.wolf-houses-flex {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 4em 0.25em 0;
-    /* border: 1px solid yellow; */
-    align-items: center;
+/* .wolf-houses-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 4rem auto;
+    max-width: 1000px;
+    width: 100%
 }
 
 .wolf-house-flex {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0.5em 1.5em;
+    margin: 0.25rem 1.5rem;
 }
 
 .wolf-house-name {
     display: block;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     text-align: center;
-    margin: 0.5em 0;
+    margin: 0.25rem;
     width: 100%;
-    /* order: 1; */
 }
 
 .wolf-house-symbol {
-    width: 100px;
-    height: 100px;
+    width: 20vw;
+    max-width: 240px;
+    height: 20vw;
+    max-height: 240px;
     border-radius: 50%;
     object-fit: cover;
-    margin: 0.25em 0;
-    /* order: 3; */
+    margin: 0.25rem;
 }
 
 .wolf-house-points {
     display: block;
-    font-size: 1.8rem;
+    font-size: 2rem;
     text-align: center;
     margin: 0;
     width: 100%;
-    /* order: 2; */
+} */
+
+.header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding: 0.5rem;
+    position: fixed;
+    background-image: linear-gradient(to bottom, rgba(50, 45, 41, 0.6), rgba(50, 45, 41, 0));
 }
 
-/* for windows less than 900px wide*/
-@media screen, (max-width:300px) {
+.header a {
+    margin: 0.25rem;
+    font-size: 0.9rem;
+    text-decoration: none;
+    color:rgb(240, 227, 215);
+}
+
+/* screens wider than 500px */
+@media screen and (min-width: 600px) {
+    .header {
+        justify-content: flex-end;
+    }
+
+    .header a {
+        margin: 0.25rem;
+        font-size: 1rem;
+    }
+}
+
+
+.wolf-houses-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100vh;
+    margin: 0;
+    width: 100%;
+    overflow:visible;
+}
+
+.wolf-house-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    transition: .3s;
+    box-shadow: inset 1rem 1rem 20rem 20rem rgba(50, 45, 41, 0.3);
+}
+
+.arctic {
+    background: url('../../assets/images/arctic-wolf.jpg');
+    background-position: -170px;
+    background-size: cover, contain;
+    background-repeat: no-repeat;
+}
+
+.grey {
+    background: url('../../assets/images/grey-wolf.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.timber {
+    background: url('../../assets/images/timber-wolf.jpg');
+    background-position: -250px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.arctic:hover,
+.grey:hover,
+.timber:hover {
+    box-shadow: inset 1rem 1rem 20rem 20rem rgba(50, 45, 41, 0.6);
+}
+
+
+.wolf-house-name,
+.wolf-house-points {
+    display: block;
+    text-align: center;
+    margin: 0.25rem;
+    width: 100%;
+    color: #FFF;
+    text-shadow: 0 0 10px rgb(50 45 41)
+}
+
+.wolf-house-name {
+    font-size: 2.2vw; 
+}
+
+.wolf-house-points {
+    font-size: 4vw;
+}
+
+
+/* @media screen, (max-width:300px) {
     .wolf-houses-flex {
         flex-direction: column;
         flex-wrap: nowrap;
         margin: 0.25rem;
-        /* border: 1px solid green; */
         align-items: flex-start;
-        max-width: 400px;
+        width: 100%
     }
     
     .wolf-house-flex {
@@ -82,4 +172,4 @@
         font-size: 1.5rem;
         font-weight: bolder;
     }
-}
+} */
