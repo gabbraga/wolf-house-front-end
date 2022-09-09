@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { DATA } from 'src/assets/mock-data';
 
 @Component({
   selector: 'app-student-points-list',
@@ -7,83 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentPointsListComponent implements OnInit {
 
-  public students: {
+  public selectedStudentId: number;
+
+  public students$: Observable<{
     name: string;
     totalPoints: number;
     house: string;
     grade: number;
     teacher: string;
-  }[];
+  }[]>;
 
-  constructor() {
-    this.students = [
-      {
-        name: 'Brock',
-        totalPoints: 120,
-        house: 'Grey',
-        grade: 2,
-        teacher: 'Gabriela'
-      },
-      {
-        name: 'Amy',
-        totalPoints: 80,
-        house: 'Timber',
-        grade: 6,
-        teacher: 'Tiffany'
-      },
-      {
-        name: 'Emily',
-        totalPoints: 65,
-        house: 'Arctic',
-        grade: 1,
-        teacher: 'Tiffany'
-      },
-      {
-        name: 'Brock',
-        totalPoints: 120,
-        house: 'Grey',
-        grade: 2,
-        teacher: 'Gabriela'
-      },
-      {
-        name: 'Amy',
-        totalPoints: 80,
-        house: 'Timber',
-        grade: 4,
-        teacher: 'Betty'
-      },
-      {
-        name: 'Emily',
-        totalPoints: 65,
-        house: 'Arctic',
-        grade: 5,
-        teacher: 'Tiffany'
-      },
-      {
-        name: 'Brock',
-        totalPoints: 120,
-        house: 'Grey',
-        grade: 2,
-        teacher: 'Gabriela'
-      },
-      {
-        name: 'Amy',
-        totalPoints: 80,
-        house: 'Timber',
-        grade: 3,
-        teacher: 'Jeremy'
-      },
-      {
-        name: 'Emily',
-        totalPoints: 65,
-        house: 'Arctic',
-        grade: 6,
-        teacher: 'Tiffany'
-      }
-    ]
-   }
+  constructor() { }
 
   ngOnInit(): void {
+    this.students$ = of(DATA.students);
   }
 
 }

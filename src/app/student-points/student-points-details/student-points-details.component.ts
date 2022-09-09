@@ -1,55 +1,49 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, Input } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { DATA } from 'src/assets/mock-data';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-student-points-details',
   templateUrl: './student-points-details.component.html',
   styleUrls: ['./student-points-details.component.css']
 })
-export class StudentPointsDetailsComponent implements OnInit {
+export class StudentPointsDetailsComponent implements OnInit, OnChanges {
 
-  public student: {
+  @Input() studentId: number;
+
+  public student$: Observable<{
+    id: number;
     name: string;
+    totalPoints: number;
     house: string;
-  };
+    grade: number;
+    teacher: string;
+  }>;
 
-  public pointsSubmissions: {
+  public pointsSubmissions$: Observable<{
     date: string;
     points: number;
     paw: string;
     comments: string;
     staff: string;
-  }[];
+  }[]>;
+
   public totalPoints: number;
 
   constructor() { 
-    this.student = {
-      name: 'Max',
-      house: 'Arctic'
-    }
-    this.pointsSubmissions = [
-      {
-        date: '12/03/2022',
-        points: 10,
-        paw: 'Honesty',
-        comments: 'best policy',
-        staff: 'Brock'
-      },
-      {
-        date: '11/02/2022',
-        points: 15,
-        paw: 'Perseverence',
-        comments: '10/10 persevered',
-        staff: 'Bonnie'
-      },
-      {
-        date: '08/13/2022',
-        points: 5,
-        paw: 'Kindness',
-        comments: 'so kind omg',
-        staff: 'Scott'
-      }
-    ];
+    this.pointsSubmissions$ = of(DATA.pointsSubmissions);
     this.totalPoints = this.getTotalPoints();
+  }
+
+  ngOnChanges() {
+    this.student$ = of(DATA.students).pipe(
+      map((students: any) => {
+        return students.filter((student: any) => {
+          return student.id == this.studentId;
+        });
+      })
+    );
   }
 
   ngOnInit(): void {
@@ -57,9 +51,9 @@ export class StudentPointsDetailsComponent implements OnInit {
 
   private getTotalPoints(): number {
     let totalPoints = 0;
-    for (const submission of this.pointsSubmissions) {
+    /* for (const submission of this.pointsSubmissions) {
       totalPoints += submission.points;
-    }
+    } */
     return totalPoints;
   }
 

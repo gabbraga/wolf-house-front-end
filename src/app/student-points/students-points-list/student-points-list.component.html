@@ -10,13 +10,15 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let student of students">
-            <td>{{ student.name }}</td>
-            <td>{{ student.totalPoints }}</td>
-            <td>{{ student.house }}</td>
-            <td>{{ student.grade }}</td>
-            <td>{{ student.teacher }}</td>
-        </tr>
+        <ng-container *ngIf="students$ | async as students">
+            <tr *ngFor="let student of students" (click)="selectedStudentId = student.id">
+                <td>{{ student.name }}</td>
+                <td>{{ student.totalPoints }}</td>
+                <td>{{ student.house }}</td>
+                <td>{{ student.grade }}</td>
+                <td>{{ student.teacher }}</td>
+            </tr>
+        </ng-container>
     </tbody>
 </table>
-<app-student-points-details></app-student-points-details>
+<app-student-points-details *ngIf="selectedStudentId" [studentId]="selectedStudentId"></app-student-points-details>

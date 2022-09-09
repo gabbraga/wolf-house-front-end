@@ -9,12 +9,14 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let staffMember of staffMembers">
-            <td>{{ staffMember.name }}</td>
-            <td>{{ staffMember.totalPoints }}</td>
-            <td>{{ staffMember.totalSubmissions }}</td>
-            <td>{{ staffMember.house }}</td>
-        </tr>
+        <ng-container *ngIf="staffMembers$ | async as staffMembers">
+            <tr *ngFor="let staffMember of staffMembers">
+                <td>{{ staffMember.name }}</td>
+                <td>{{ staffMember.totalPoints }}</td>
+                <td>{{ staffMember.totalSubmissions }}</td>
+                <td>{{ staffMember.house }}</td>
+            </tr>
+        </ng-container>
     </tbody>
 </table>
 <app-staff-points-details></app-staff-points-details>
