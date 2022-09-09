@@ -1,26 +1,20 @@
-<h2 style="font-size: 1rem">Select a staff member to view their history</h2>
-<div class="contribution-container">
-    <div class="card m-3">
-        <div class="card-body">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Points</th>
-                        <th>Submissions</th>
-                        <th>House</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let staffMember of staffMembers">
-                        <td>{{ staffMember.name }}</td>
-                        <td>{{ staffMember.totalPoints }}</td>
-                        <td>{{ staffMember.totalSubmissions }}</td>
-                        <td>{{ staffMember.house }}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <app-staff-points-details></app-staff-points-details>
-</div>
+<h2>Select a staff member to view their history</h2>
+<table class="table staff-list">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Points</th>
+            <th>Submissions</th>
+            <th>Wolfhouse</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let staffMember of staffMembers">
+            <td>{{ staffMember.name }}</td>
+            <td>{{ staffMember.totalPoints }}</td>
+            <td>{{ staffMember.totalSubmissions }}</td>
+            <td>{{ staffMember.house }}</td>
+        </tr>
+    </tbody>
+</table>
+<app-staff-points-details></app-staff-points-details>

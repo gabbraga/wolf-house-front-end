@@ -1,7 +1,8 @@
-.student-info-header {
+.staff-info-header {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
+    width: 100%;
 }
 
 .wolf-house-symbol {
@@ -12,28 +13,75 @@
     margin: 1em;
 }
 
-.student-info-header+div {
-    display: flex;
-    flex-direction: column;
-    margin: 1rem;
-}
-
-.student-info-header-name,
-.student-info-header-points span:first-child {
-   font-weight: bolder;
-   margin-right: 0.25rem;
-}
-
-.student-info-header-name {
+.staff-info-header-name {
     font-size: 2rem;
 }
 
-.student-info-header-points span:first-child  {
-    font-size: 1.4rem;
+.staff-info-header-details {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0.25rem;
+    margin-left: auto;
 }
 
-.student-info-header-points span:last-child {
+.staff-info-header-details-flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.staff-info-header-details span:nth-child(odd){
+   margin-right: 0.25rem;
+   font-size: 1.4rem;
+}
+
+.staff-info-header-details span:nth-child(even){
+    font-weight: lighter;
+    margin-right: 0.25rem;
     font-size: 0.9rem;
+ }
+
+
+/* table styling */
+.staff-card {
+    color: inherit !important;
+    width: 100%;
 }
 
+.staff-card thead tr {
+    background-color: rgb(111 102 96);
+}
 
+.staff-card thead tr th {
+    border-bottom: none;
+    font-weight: lighter;
+    letter-spacing: 1px;
+}
+
+.staff-card thead tr th:first-child {
+    border-top-left-radius: 4px;
+}
+
+.staff-card thead tr th:last-child {
+    border-top-right-radius: 4px;
+}
+
+.staff-card tbody tr td {
+    border-bottom-color: rgb(240, 227, 215, 0.5);
+}
+
+.staff-card tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.staff-card i {
+    margin: auto 0.5rem;
+}
+
+.staff-card i:hover {
+    /* color: rgb(249 128 47) !important; */
+    color: rgb(240, 227, 215, 0.5) !important;
+}

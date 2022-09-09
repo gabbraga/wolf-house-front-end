@@ -1,0 +1,39 @@
+h2 {
+    font-size: 1rem; 
+    font-weight: lighter;
+    margin-bottom: 1rem;
+}
+
+.staff-list {
+    color: inherit !important;
+}
+
+.staff-list thead tr {
+    background-color: rgb(111 102 96);
+}
+
+.staff-list thead tr th {
+    border-bottom: none;
+    font-weight: lighter;
+    letter-spacing: 1px;
+}
+
+.staff-list thead tr th:first-child {
+    border-top-left-radius: 4px;
+}
+
+.staff-list thead tr th:last-child {
+    border-top-right-radius: 4px;
+}
+
+.staff-list tbody tr td {
+    border-bottom-color: rgb(240, 227, 215, 0.5);
+}
+
+.staff-list tbody tr:hover {
+    background-color: rgb(75, 68, 64) !important;
+}
+
+.staff-list tbody tr:last-child td {
+    border-bottom: none;
+}

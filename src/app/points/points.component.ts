@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs';
-import {map, startWith} from 'rxjs/operators';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
-
 
 @Component({
   selector: 'app-points',
@@ -64,13 +62,6 @@ export class PointsComponent implements OnInit {
         this.pointsForm.controls.notes.setValue('');
       }
     });
-/*     this.filteredMembers = this.pointsForm.controls.memberControl.valueChanges.pipe(startWith(''),map(value => this._filter(value)));
- */  
-}
-
-  private _filter(value: string): string[] {
-    const filterValue = value.toLowerCase();
-    return this.paws.filter(option => option.toLowerCase().includes(filterValue));
   }
 
 }
