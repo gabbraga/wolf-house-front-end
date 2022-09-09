@@ -76,3 +76,12 @@
 .student-card tbody tr:last-child td {
     border-bottom: none;
 }
+
+.student-card i {
+    margin: auto 0.5rem;
+}
+
+.student-card i:hover {
+    /* color: rgb(249 128 47) !important; */
+    color: rgb(240, 227, 215, 0.5) !important;
+}

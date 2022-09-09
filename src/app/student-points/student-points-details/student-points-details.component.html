@@ -25,6 +25,7 @@
             <th>Paw</th>
             <th>Comments</th>
             <th>Staff</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -34,6 +35,10 @@
             <td>{{ submission.paw }}</td>
             <td>{{ submission.comments }}</td>
             <td>{{ submission.staff }}</td>
+            <td>
+                <i class="far fa-edit" ngbTooltip="Edit submission"></i>
+                <i class="far fa-trash-alt" ngbTooltip="Delete submission"></i>
+            </td>
         </tr>
     </tbody>
 </table>
