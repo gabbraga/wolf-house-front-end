@@ -14,6 +14,8 @@ h2 {
 
 .student-list thead tr th {
     border-bottom: none;
+    font-weight: lighter;
+    letter-spacing: 1px;
 }
 
 .student-list thead tr th:first-child {

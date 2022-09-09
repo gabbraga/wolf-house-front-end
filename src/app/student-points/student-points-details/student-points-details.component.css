@@ -57,6 +57,8 @@
 
 .student-card thead tr th {
     border-bottom: none;
+    font-weight: lighter;
+    letter-spacing: 1px;
 }
 
 .student-card thead tr th:first-child {
