@@ -11,6 +11,8 @@ export class StudentPointsListComponent implements OnInit {
     name: string;
     totalPoints: number;
     house: string;
+    grade: number;
+    teacher: string;
   }[];
 
   constructor() {
@@ -18,47 +20,65 @@ export class StudentPointsListComponent implements OnInit {
       {
         name: 'Brock',
         totalPoints: 120,
-        house: 'Grey'
+        house: 'Grey',
+        grade: 2,
+        teacher: 'Gabriela'
       },
       {
         name: 'Amy',
         totalPoints: 80,
-        house: 'Timber'
+        house: 'Timber',
+        grade: 6,
+        teacher: 'Tiffany'
       },
       {
         name: 'Emily',
         totalPoints: 65,
-        house: 'Arctic'
+        house: 'Arctic',
+        grade: 1,
+        teacher: 'Tiffany'
       },
       {
         name: 'Brock',
         totalPoints: 120,
-        house: 'Grey'
+        house: 'Grey',
+        grade: 2,
+        teacher: 'Gabriela'
       },
       {
         name: 'Amy',
         totalPoints: 80,
-        house: 'Timber'
+        house: 'Timber',
+        grade: 4,
+        teacher: 'Betty'
       },
       {
         name: 'Emily',
         totalPoints: 65,
-        house: 'Arctic'
+        house: 'Arctic',
+        grade: 5,
+        teacher: 'Tiffany'
       },
       {
         name: 'Brock',
         totalPoints: 120,
-        house: 'Grey'
+        house: 'Grey',
+        grade: 2,
+        teacher: 'Gabriela'
       },
       {
         name: 'Amy',
         totalPoints: 80,
-        house: 'Timber'
+        house: 'Timber',
+        grade: 3,
+        teacher: 'Jeremy'
       },
       {
         name: 'Emily',
         totalPoints: 65,
-        house: 'Arctic'
+        house: 'Arctic',
+        grade: 6,
+        teacher: 'Tiffany'
       }
     ]
    }

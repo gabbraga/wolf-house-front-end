@@ -1,4 +1,37 @@
-.contribution-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+h2 {
+    font-size: 1rem; 
+    font-weight: lighter;
+    margin-bottom: 1rem;
+}
+
+.student-list {
+    color: inherit !important;
+}
+
+.student-list thead tr {
+    background-color: rgb(111 102 96);
+}
+
+.student-list thead tr th {
+    border-bottom: none;
+}
+
+.student-list thead tr th:first-child {
+    border-top-left-radius: 4px;
+}
+
+.student-list thead tr th:last-child {
+    border-top-right-radius: 4px;
+}
+
+.student-list tbody tr td {
+    border-bottom-color: rgb(240, 227, 215, 0.5);
+}
+
+.student-list tbody tr:hover {
+    background-color: rgb(75, 68, 64) !important;
+}
+
+.student-list tbody tr:last-child td {
+    border-bottom: none;
 }

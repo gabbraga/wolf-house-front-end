@@ -1,24 +1,22 @@
-<h2 style="font-size: 1rem">Select a student to view their history</h2>
-<div class="contribution-container">
-    <div class="card m-3">
-        <div class="card-body">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Points</th>
-                        <th>House</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let student of students">
-                        <td>{{ student.name }}</td>
-                        <td>{{ student.totalPoints }}</td>
-                        <td>{{ student.house }}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <app-student-points-details></app-student-points-details>
-</div>
+<h2>Select a student to view their history</h2>
+<table class="table student-list">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Points</th>
+            <th>Wolfhouse</th>
+            <th>Grade</th>
+            <th>Teacher</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student of students">
+            <td>{{ student.name }}</td>
+            <td>{{ student.totalPoints }}</td>
+            <td>{{ student.house }}</td>
+            <td>{{ student.grade }}</td>
+            <td>{{ student.teacher }}</td>
+        </tr>
+    </tbody>
+</table>
+<app-student-points-details></app-student-points-details>
