@@ -1,17 +1,11 @@
-<div ngClass="{{ tiny ? 'wolf-houses-flex-tiny' : 'wolf-houses-grid'}}">
-    <div ngClass="{{ tiny ? 'wolf-house-flex-tiny' : 'wolf-house-flex arctic'}}">
-        <img *ngIf="tiny" src="../../assets/images/arctic-wolf.jpg" class="wolf-house-symbol-tiny">
-        <span ngClass="{{ tiny ? 'wolf-house-name-tiny' : 'wolf-house-name'}}">Arctic</span>
-        <span ngClass="{{ tiny ? 'wolf-house-points-tiny' : 'wolf-house-points'}}">145</span>
+<ng-container *ngIf="(houses$ | async) as houses">
+    <div ngClass="{{ tiny ? 'wolf-houses-flex-tiny' : 'wolf-houses-grid'}}">
+        <ng-container *ngFor="let house of houses">
+            <div ngClass="{{ tiny ? 'wolf-house-flex-tiny' : 'wolf-house-flex ' + house.houseName | lowercase }}">
+                <img *ngIf="tiny" src="../../assets/images/{{house.houseName | lowercase}}-wolf.jpg" class="wolf-house-symbol-tiny">
+                <span ngClass="{{ tiny ? 'wolf-house-name-tiny' : 'wolf-house-name'}}">{{ house.houseName }}</span>
+                <span ngClass="{{ tiny ? 'wolf-house-points-tiny' : 'wolf-house-points'}}">{{ house.totalPoints }}</span>
+            </div>
+        </ng-container>
     </div>
-    <div ngClass="{{ tiny ? 'wolf-house-flex-tiny' : 'wolf-house-flex timber'}}">
-        <img *ngIf="tiny" src="../../assets/images/timber-wolf.jpg" class="wolf-house-symbol-tiny">
-        <span ngClass="{{ tiny ? 'wolf-house-name-tiny' : 'wolf-house-name'}}">Timber</span>
-        <span ngClass="{{ tiny ? 'wolf-house-points-tiny' : 'wolf-house-points'}}">234</span>
-    </div>
-    <div  ngClass="{{ tiny ? 'wolf-house-flex-tiny' : 'wolf-house-flex grey'}}">
-        <img *ngIf="tiny" src="../../assets/images/grey-wolf.jpg" class="wolf-house-symbol-tiny">
-        <span ngClass="{{ tiny ? 'wolf-house-name-tiny' : 'wolf-house-name'}}">Grey</span>
-        <span ngClass="{{ tiny ? 'wolf-house-points-tiny' : 'wolf-house-points'}}">542</span>
-    </div>
-</div>
+</ng-container>
