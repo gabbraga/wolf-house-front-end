@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Wolf House';
+  public isTeacherLoggedIn: boolean;
+
+  constructor() {
+    this.isTeacherLoggedIn = false;
+  }
 }

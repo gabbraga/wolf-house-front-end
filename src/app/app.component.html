@@ -1,4 +1,9 @@
 <div class="header">
-    <a routerLink="/teacher-login">Teacher Login</a>
+    <ng-container *ngIf="!isTeacherLoggedIn; else teacherIsLoggedIn">
+        <a routerLink="/teacher-login" (click)="isTeacherLoggedIn=true">Teacher Login</a>
+    </ng-container>
+    <ng-template #teacherIsLoggedIn>
+        <a routerLink="/leaderboard" (click)="isTeacherLoggedIn=false">Leaderboard</a>
+    </ng-template>
 </div>
 <router-outlet></router-outlet>
