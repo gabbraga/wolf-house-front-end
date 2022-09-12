@@ -1,22 +1,24 @@
-<div class="student-info-header">
-    <img class="wolf-house-symbol" src="../../assets/images/arctic-wolf.jpg">
-    <span class="student-info-header-name">{{ (student$ | async)?.name }}</span>
-    <div class="student-info-header-details">
-        <div class="student-info-header-details-flex-column">
-            <span>{{ totalPoints }}</span>
-            <span>points</span>
-        </div>
-        <div class="student-info-header-details-flex-column">
-            <span>{{ (student$ | async)?.grade }}</span>
-            <span>grade</span>
-        </div>
-        <div class="student-info-header-details-flex-column">
-            <span>{{ (student$ | async)?.teacher }}</span>
-            <span>teacher</span>
+<ng-container *ngIf="(student$ | async) as student">
+    <div class="student-info-header">
+        <img class="wolf-house-symbol" src="../../assets/images/{{student.house | lowercase}}-wolf.jpg">
+        <span class="student-info-header-name">{{ student.name }}</span>
+        <div class="student-info-header-details">
+            <div class="student-info-header-details-flex-column">
+                <span>{{ studentTotalPoints }}</span>
+                <span>points</span>
+            </div>
+            <div class="student-info-header-details-flex-column">
+                <span>{{ student.grade }}</span>
+                <span>grade</span>
+            </div>
+            <div class="student-info-header-details-flex-column">
+                <span>{{ student.teacher }}</span>
+                <span>teacher</span>
+            </div>
         </div>
     </div>
-</div>
-  
+</ng-container>
+
 <table class="student-card table">
     <thead>
         <tr>
@@ -29,9 +31,9 @@
         </tr>
     </thead>
     <tbody>
-        <ng-container *ngIf="pointsSubmissions$ | async as pointsSubmissions">
-            <tr *ngFor="let submission of pointsSubmissions">
-                <td>{{ submission.date }} </td>
+        <ng-container *ngIf="(pointSubmissions$ | async) as pointSubmissions">
+            <tr *ngFor="let submission of pointSubmissions">
+                <td>{{ submission.date | date : 'dd-MM-yyyy' }} </td>
                 <td>{{ submission.points }} </td>
                 <td>{{ submission.paw }}</td>
                 <td>{{ submission.comments }}</td>
