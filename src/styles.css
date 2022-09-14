@@ -4,8 +4,6 @@
     margin: 0;
     padding: 0;
 }
-@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
-@import '~boostrap/scss/bootstrap.scss';
 
 html, body { height: 100%; }
 body { 
