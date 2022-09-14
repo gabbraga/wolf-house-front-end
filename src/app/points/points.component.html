@@ -2,7 +2,8 @@
   <div class="points-row-flex">
     <label for="memberInput" class="points-form-label">Member</label>
     <ng-select 
-      [items]="members$ | async"
+      [items]="students$ | async"
+      bindLabel="name"
       placeholder="Select a member"
       labelForId="memberInput"
       formControlName="member">
@@ -13,7 +14,8 @@
     <label for="houseInput" class="points-form-label">House</label>
     <input 
       id="houseInput" 
-      type="text" 
+      type="text"
+      class="house-input" 
       formControlName="house"/> 
   </div>
   

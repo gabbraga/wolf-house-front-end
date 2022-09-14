@@ -18,6 +18,10 @@
     margin: 0.25rem;
 }
 
+.house-input {
+    text-transform: capitalize;
+}
+
 .add-points-btn {
     align-self: flex-end;
 }
