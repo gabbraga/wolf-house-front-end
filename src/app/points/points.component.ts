@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import {Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 
 interface StudentClientModel {
   name: string;
   house: string;
+  studentId: string;
 }
 
 interface StudentServerResponse {
@@ -76,12 +77,40 @@ export class PointsComponent implements OnInit {
         return students.map((student: StudentServerResponse) => {
           return {
             house: student.house,
-            name: student.name
+            name: student.name,
+            studentId: student._id
           }
         });
       })
     );
 
+  }
+
+  public addPointSubmissions(): void {
+    this.http.post(
+      environment.api + 'point-submissions', 
+      JSON.parse(JSON.stringify({
+        studentId: this.pointsForm.controls.member.value.studentId,
+        date: new Date(),
+        house: this.pointsForm.controls.house.value,
+        paw: this.pointsForm.controls.paw.value,
+        comments: this.pointsForm.controls.notes.value || '',
+        staff: this.pointsForm.controls.teacher.value,
+        points: this.pointsForm.controls.points.value
+      }))
+    ).subscribe((response: HttpResponse<any>) => {
+      if(response.status === 201 || response.status === 200) {
+        this.pointsForm.controls.member.setValue(null);
+        this.pointsForm.controls.house.setValue('');
+        this.pointsForm.controls.points.setValue(null);
+        this.pointsForm.controls.paw.setValue(null);
+        this.pointsForm.controls.notes.setValue('');
+      } else {
+        console.log('error - post unsuccessful')
+        console.dir(response);
+      }
+      
+    })
   }
 
 }
