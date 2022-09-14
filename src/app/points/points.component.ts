@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Observable} from 'rxjs';
-import { ReactiveFormsModule, FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
+import {Observable, of} from 'rxjs';
+import { FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-points',
@@ -8,17 +8,14 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validator, Validators } fr
   styleUrls: ['./points.component.css']
 })
 export class PointsComponent implements OnInit {
-  public filteredMembers: Observable<string[]>;
-  public paws: string[];
-  public members: string[];
-  public selectedMember: any;
-  public selectedHouseName: string;
   public pointsForm: FormGroup;
+  public paws$: Observable<string[]>;
+  public members$: Observable<string[]>;
 
   constructor(
     private formBuilder: FormBuilder
   ) {
-    this.paws = [
+    this.paws$ = of([
       "Perseverance",
       "Honesty",
       "Cooperation",
@@ -31,25 +28,26 @@ export class PointsComponent implements OnInit {
       "Respect",
       "Leadership",
       "Participation"
-    ];
-    this.members = [
+    ]);
+
+    this.members$ = of([
       "Amy",
       "Brock",
       "Carlos",
       "David",
       "Emily",
       "Fred"
-    ];
+    ]);
   }
 
   ngOnInit(): void {
     this.pointsForm = this.formBuilder.group({
       member: [null, Validators.required],
-      house: ['', Validators.required],
+      house: [{value: '', disabled: true}, Validators.required],
       points: [null, Validators.required],
       paw: [null, Validators.required],
-      notes: ['', Validators.required],
-      teacher: ['Tiffany', Validators.required]
+      notes: '',
+      teacher: [{value:'Tiffany', disabled: true}, Validators.required]
     });
 
     this.pointsForm.controls.member.valueChanges.subscribe((member: string) => {

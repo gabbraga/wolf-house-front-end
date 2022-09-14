@@ -104,7 +104,14 @@ form ng-select .ng-select-container .ng-arrow-wrapper .ng-arrow {
     text-align: center;
     grid-column-end: -1;
     justify-self: end;
-    background-color: rgb(249 128 47) !important;
     border-style: none;
+    border-radius: 4px;
+    background-color: rgb(249 128 47) !important;
     color: inherit !important;
+}
+
+.primary-button:disabled {
+    background-color: rgb(205, 131, 82) !important;
+    border-style: none;
+    color: rgb(222, 212, 203) !important
 }

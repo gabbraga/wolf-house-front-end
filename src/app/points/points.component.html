@@ -2,7 +2,7 @@
   <div class="points-row-flex">
     <label for="memberInput" class="points-form-label">Member</label>
     <ng-select 
-      [items]="members"
+      [items]="members$ | async"
       placeholder="Select a member"
       labelForId="memberInput"
       formControlName="member">
@@ -12,7 +12,6 @@
   <div class="points-row-flex">
     <label for="houseInput" class="points-form-label">House</label>
     <input 
-      disabled 
       id="houseInput" 
       type="text" 
       formControlName="house"/> 
@@ -21,7 +20,7 @@
   <div class="points-row-flex">
     <label for="paw" class="points-form-label">Paw</label>
     <ng-select 
-      [items]="paws"
+      [items]="paws$ | async"
       placeholder="Select a paw"
       labelForId="paw"
       formControlName="paw">
@@ -30,8 +29,7 @@
     
   <div class="points-row-flex">
     <label for="points" class="points-form-label">Points</label>
-    <input 
-      required 
+    <input  
       id="points" 
       type="number" 
       min="0" 
@@ -52,12 +50,15 @@
 
   <div class="points-row-flex">
     <label for="staffMember" class="points-form-label w-100">Staff</label>
-    <input 
-      disabled 
+    <input  
       id="staffMember" 
       type="text" 
       formControlName="teacher"/> 
   </div>
   
-  <button type="submit" class="btn primary-button add-points-btn">Add Points</button>
+  <button 
+    [disabled]="pointsForm.status !== 'VALID'"
+    type="submit" 
+    class="primary-button add-points-btn">
+    Add Points</button>
 </form>
