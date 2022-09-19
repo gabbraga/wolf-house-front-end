@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 interface StudentClientModel {
@@ -49,13 +50,39 @@ export class StudentPointsListComponent implements OnInit {
 
   public selectedStudentId: string;
   public students$: Observable<StudentClientModel[]>;
+  public filtersForm: FormGroup;
+  public teachers$: Observable<string[]>;
+  public houses$: Observable<string[]>;
+  public grades$: Observable<(string | number)[]>
 
   constructor(
-    private http: HttpClient
-  ) {}
+    private http: HttpClient,
+    private formBuilder: FormBuilder
+  ) {
+    this.teachers$ = of(['Tiffany','Gabriela','Betty', 'Jeremy']);
+    this.houses$ = of(['Arctic', 'Grey','Timber']);
+    this.grades$ = of(['JK','SK',1,2,3,4,5,6,7,8]);
+  }
 
   ngOnInit(): void {
-    this.students$ = this.http.get(environment.api + 'students')
+    this.getStudents();
+    this.filtersForm = this.formBuilder.group({
+      teacher: null,
+      grade: null,
+      house: null
+    });
+
+    this.filtersForm.valueChanges.subscribe((formValue: any) => {
+      this.getStudents(formValue.house, formValue.grade, formValue.teacher);
+    })
+  }
+
+  getStudents(house: string = '', grade: string = '', teacher: string = '') {
+    this.students$ = this.http.get(environment.api 
+      + 'students?'
+      + (house ? `house=${house}` : '')
+      + (grade ? `&grade=${grade}` : '')
+      + (teacher ? `&teacher=${teacher}` : ''))
     .pipe(
       map((houses: StudentServerModel[]) => {
         return houses.map((student: StudentServerModel) => {

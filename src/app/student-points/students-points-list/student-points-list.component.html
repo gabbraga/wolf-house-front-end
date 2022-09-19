@@ -1,4 +1,31 @@
 <h2>Select a student to view their history</h2>
+<form [formGroup]="filtersForm" class="filter-form">
+  <!-- Wolfhouse Dropdown -->
+  <label for="wolfhouseDropdown">Wolfhouse</label>
+  <ng-select 
+    [items]="houses$ | async" 
+    placeholder="Select house"
+    labelForId="wolfhouseDropdown"
+    formControlName="house">
+  </ng-select>
+  <!-- Grade Dropdown -->
+  <label for="gradeDropdown">Grade</label>
+  <ng-select 
+    [items]="grades$ | async" 
+    placeholder="Select grade" 
+    labelForId="gradeDropdown" 
+    formControlName="grade">
+  </ng-select>
+  <!-- Teacher Dropdown -->
+  <label for="teacherDropdown">Teacher</label>
+  <ng-select 
+    [items]="teachers$ | async" 
+    placeholder="Select teacher" 
+    labelForId="teacherDropdown"
+    formControlName="teacher">
+  </ng-select>
+</form>
+
 <table class="table student-list">
     <thead>
         <tr>
